@@ -28,7 +28,7 @@ class SlideApi
         if (!empty($param['keyword'])) {
             $where['name'] = ['like', "%{$param['keyword']}%"];
         }
-
+        
         //返回的数据必须是数据集或数组,item里必须包括id,name,如果想表示层级关系请加上 parent_id
         return $slideModel->where($where)->select();
     }

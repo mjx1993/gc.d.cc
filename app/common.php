@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * 生成唯一用户身份识别码
+ * @return string
+ */
+function createSid() {
+    return md5(md5(uniqid() . rand(10000, 99999)) . md5(time()));
+}
+
 /*
 * 计算星座的函数 string get_zodiac_sign(string month, string day)
 * 输入：月份，日期
